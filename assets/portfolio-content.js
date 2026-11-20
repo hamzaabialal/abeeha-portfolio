@@ -12,6 +12,8 @@
  * "scopedText": replace the text inside ONE element only (when the same
  *           template word is used elsewhere, e.g. "Web Design")
  * "colors": original template colour ->  ash grey colour
+ * "colorOverrides": exact colour string -> replacement (used to raise faint
+ *           text to WCAG AA contrast; applied before "colors")
  * "pages":  <title> and meta description for each page
  *
  * After editing, run:   python tools/build.py
@@ -195,16 +197,16 @@ window.PORTFOLIO_CONTENT = {
   },
 
   "images": {
-    "qwDvSo0wyH4CBjsPBRbzgFhz9fw": "assets/images/abeeha-portrait.png",
-    "VdvtmjCwdrHBZJznP2uG4jNrQY": "assets/images/abeeha-portrait.png",
-    "PlSkVTwt0uDXQstLN3IOgouTnLc": "assets/images/abeeha-portrait-medium-mirror.png",
-    "ueYuyiIR1alUgWmBw0wNWmXQxc": "assets/images/abeeha-portrait-close.png",
-    "hRcGOXDVXdxEFz8STNm7hJuMo": "assets/images/abeeha-portrait-close-mirror.png",
-    "Zj3ww30Vd98FyOg59ushro8eI": "assets/images/abeeha-portrait-mirror.png",
-    "UehLGUWCfpPB30pYDFQJdfEcVQU": "assets/images/abeeha-portrait-close.png",
-    "1N4dQyPfSDSTtXwyuwMLiL3paQ": "assets/images/abeeha-portrait-medium-mirror.png",
-    "ee5a8VlAumEXYx1v5IHKEHlakU": "assets/images/abeeha-portrait-close-mirror.png",
-    "9z652MG2hXI4KzHMNgZD7MW74L0": "assets/images/abeeha-portrait-mirror.png",
+    "qwDvSo0wyH4CBjsPBRbzgFhz9fw": "assets/images/abeeha-portrait.webp",
+    "VdvtmjCwdrHBZJznP2uG4jNrQY": "assets/images/abeeha-portrait.webp",
+    "PlSkVTwt0uDXQstLN3IOgouTnLc": "assets/images/abeeha-portrait-medium-mirror.webp",
+    "ueYuyiIR1alUgWmBw0wNWmXQxc": "assets/images/abeeha-portrait-close.webp",
+    "hRcGOXDVXdxEFz8STNm7hJuMo": "assets/images/abeeha-portrait-close-mirror.webp",
+    "Zj3ww30Vd98FyOg59ushro8eI": "assets/images/abeeha-portrait-mirror.webp",
+    "UehLGUWCfpPB30pYDFQJdfEcVQU": "assets/images/abeeha-portrait-close.webp",
+    "1N4dQyPfSDSTtXwyuwMLiL3paQ": "assets/images/abeeha-portrait-medium-mirror.webp",
+    "ee5a8VlAumEXYx1v5IHKEHlakU": "assets/images/abeeha-portrait-close-mirror.webp",
+    "9z652MG2hXI4KzHMNgZD7MW74L0": "assets/images/abeeha-portrait-mirror.webp",
     "6VpdKCB62meIuEpzD9sJfmeFGA": "assets/images/abeeha-bw-close.jpg",
     "Xc0tjYQZes2PBNvj3inOzDz4C8": "assets/images/abeeha-studio-landscape-close.jpg",
     "UBNd5jlUG1wEmylSJ7wznbFW7g": "assets/images/abeeha-studio-landscape-mirror.jpg",
@@ -213,33 +215,59 @@ window.PORTFOLIO_CONTENT = {
     "lIcwejW3yqSSyK2KSRWlGPlCA": "assets/images/favicon.png",
     "CQDa03bLnPipJjzynmItyX0Tfc": "assets/images/abeeha-photo.jpg",
 
-    "WBNEBM5pnUK5j0UsSN7OyK3qg": "assets/images/projects/hostyo/hostyo-owner-portal-dashboard.png",
-    "WYaxc1xQmwcIs4SmVoxC27Lfhw": "assets/images/projects/hostyo/hostyo-owner-portal-dashboard.png",
-    "oxWt8xDcGexKHzKIkEyNWeSMFR0": "assets/images/projects/hostyo/hostyo-crm-admin-dashboard.png",
-    "H1lDnzxdlanaUHMcxUxPg3I9RYM": "assets/images/projects/hostyo/hostyo-crm-admin-dashboard.png",
+    "WBNEBM5pnUK5j0UsSN7OyK3qg": "assets/images/projects/hostyo/hostyo-owner-portal-dashboard.webp",
+    "WYaxc1xQmwcIs4SmVoxC27Lfhw": "assets/images/projects/hostyo/hostyo-owner-portal-dashboard.webp",
+    "oxWt8xDcGexKHzKIkEyNWeSMFR0": "assets/images/projects/hostyo/hostyo-crm-admin-dashboard.webp",
+    "H1lDnzxdlanaUHMcxUxPg3I9RYM": "assets/images/projects/hostyo/hostyo-crm-admin-dashboard.webp",
 
-    "YajIbdFl3PJfXJWnFnAR3Eo4qI": "assets/images/projects/hostyo/hostyo-owner-portal-detail.jpg",
-    "WiWivfOVfUekva1VoE1essROM": "assets/images/projects/hostyo/hostyo-crm-tasks-detail.jpg",
+    "YajIbdFl3PJfXJWnFnAR3Eo4qI": "assets/images/projects/hostyo/hostyo-owner-portal-dashboard.webp",
+    "WiWivfOVfUekva1VoE1essROM": "assets/images/projects/hostyo/hostyo-crm-admin-dashboard.webp",
 
-    "v4KobKxlEKdfmj1uBq3WpgmNYo": "assets/images/projects/brioform/brioform-admin-operations-dashboard.png",
-    "Zlhl9AIHGhqRKfeZAJXWYCClLA": "assets/images/projects/brioform/brioform-workbook-content-editor.png",
-    "v6B9IVUkpvazguKsmRfC7hidjY": "assets/images/projects/brioform/brioform-workbook-content-editor.png",
-    "7Am3acuCMAwweFAht822UHpF9i8": "assets/images/projects/maitr-iso/maitr-iso-gps-punch-in.png",
-    "ZLYN3NiRxi5Mkp7TmZRbrUEHQVU": "assets/images/projects/maitr-iso/maitr-iso-gps-punch-in.png",
-    "HrrUNcB75FqF0AQuhWehZhtig": "assets/images/projects/maitr-iso/maitr-iso-job-sites-geofencing.png",
-    "HpBH7OvhnsTGlH45W1gxJpPc": "assets/images/projects/maitr-iso/maitr-iso-job-sites-geofencing.png"
+    "v4KobKxlEKdfmj1uBq3WpgmNYo": "assets/images/projects/brioform/brioform-admin-operations-dashboard.webp",
+    "Zlhl9AIHGhqRKfeZAJXWYCClLA": "assets/images/projects/brioform/brioform-workbook-content-editor.webp",
+    "v6B9IVUkpvazguKsmRfC7hidjY": "assets/images/projects/brioform/brioform-workbook-content-editor.webp",
+    "7Am3acuCMAwweFAht822UHpF9i8": "assets/images/projects/maitr-iso/maitr-iso-gps-punch-in.webp",
+    "ZLYN3NiRxi5Mkp7TmZRbrUEHQVU": "assets/images/projects/maitr-iso/maitr-iso-gps-punch-in.webp",
+    "HrrUNcB75FqF0AQuhWehZhtig": "assets/images/projects/maitr-iso/maitr-iso-job-sites-geofencing.webp",
+    "HpBH7OvhnsTGlH45W1gxJpPc": "assets/images/projects/maitr-iso/maitr-iso-job-sites-geofencing.webp"
   },
 
   "alts": {
     "WBNEBM5pnUK5j0UsSN7OyK3qg": "Hostyo Owner Portal dashboard showing balance, payouts, expenses, forecast and upcoming guest arrivals",
     "oxWt8xDcGexKHzKIkEyNWeSMFR0": "Hostyo CRM and Admin Portal dashboard with tasks, leads, deals and sales pipeline analytics",
     "qwDvSo0wyH4CBjsPBRbzgFhz9fw": "Abeeha Aamir, AI Automation and Full Stack Developer",
-    "YajIbdFl3PJfXJWnFnAR3Eo4qI": "Close-up of the Hostyo Owner Portal balance and in-house guests panel",
-    "WiWivfOVfUekva1VoE1essROM": "Close-up of the Hostyo CRM tasks and follow-up list",
+    "YajIbdFl3PJfXJWnFnAR3Eo4qI": "Hostyo Owner Portal dashboard",
+    "WiWivfOVfUekva1VoE1essROM": "Hostyo CRM and Admin Portal dashboard",
     "v4KobKxlEKdfmj1uBq3WpgmNYo": "BrioForm admin operations dashboard showing active athletes, cohorts, programs, cohort progress and action items",
     "Zlhl9AIHGhqRKfeZAJXWYCClLA": "BrioForm workbook content editor for managing weekly lessons and lesson videos in the 12-week program",
     "7Am3acuCMAwweFAht822UHpF9i8": "MAÎTR-ISO GPS punch screen showing an employee punched in at a job site with automatic punch out and distance from the site",
-    "HrrUNcB75FqF0AQuhWehZhtig": "MAÎTR-ISO job site management with addresses, GPS coordinates and geofence radius for each construction site"
+    "HrrUNcB75FqF0AQuhWehZhtig": "MAÎTR-ISO job site management with addresses, GPS coordinates and geofence radius for each construction site",
+
+    "VdvtmjCwdrHBZJznP2uG4jNrQY": "Abeeha Aamir, AI Automation and Full Stack Developer",
+    "PlSkVTwt0uDXQstLN3IOgouTnLc": "Portrait of Abeeha Aamir",
+    "ueYuyiIR1alUgWmBw0wNWmXQxc": "Portrait of Abeeha Aamir",
+    "hRcGOXDVXdxEFz8STNm7hJuMo": "Portrait of Abeeha Aamir",
+    "Zj3ww30Vd98FyOg59ushro8eI": "Portrait of Abeeha Aamir",
+    "UehLGUWCfpPB30pYDFQJdfEcVQU": "Portrait of Abeeha Aamir",
+    "1N4dQyPfSDSTtXwyuwMLiL3paQ": "Portrait of Abeeha Aamir",
+    "ee5a8VlAumEXYx1v5IHKEHlakU": "Portrait of Abeeha Aamir",
+    "9z652MG2hXI4KzHMNgZD7MW74L0": "Portrait of Abeeha Aamir",
+    "6VpdKCB62meIuEpzD9sJfmeFGA": "Black and white portrait of Abeeha Aamir",
+    "Xc0tjYQZes2PBNvj3inOzDz4C8": "Abeeha Aamir",
+    "UBNd5jlUG1wEmylSJ7wznbFW7g": "Abeeha Aamir",
+    "mbeZK7UZB9pgPhcv23zBzRfD5Q": "Abeeha Aamir",
+    "lBLed6OE6HLaGxjfY94L5fw3o": "Abeeha Aamir",
+    "WYaxc1xQmwcIs4SmVoxC27Lfhw": "Hostyo Owner Portal dashboard",
+    "H1lDnzxdlanaUHMcxUxPg3I9RYM": "Hostyo CRM and Admin Portal dashboard",
+    "v6B9IVUkpvazguKsmRfC7hidjY": "BrioForm workbook content editor",
+    "ZLYN3NiRxi5Mkp7TmZRbrUEHQVU": "MAÎTR-ISO GPS punch screen",
+    "HpBH7OvhnsTGlH45W1gxJpPc": "MAÎTR-ISO job site management screen",
+    "4S3yjP7wzYyYmBcoQJ8pzObgJFA": "Placeholder client photo",
+    "Va7JZRjhvpxtbQAtScl7FWyws": "Placeholder client photo",
+    "tnkQKs6bGodGofwfeF2QYS5g": "Placeholder client photo",
+    "c7Ufc5JgRXBihlEgDntv5sWL7s": "Placeholder client photo",
+    "1LpIZ0HXEmk9oVakTx3w7f1JB4": "Hands arranging printed layouts on a table during a planning session",
+    "eQUTXQ8rByuwp6lukPpwibpYYg0": "Bright workspace with a long table, chairs and plants"
   },
 
   "scopedText": [
@@ -249,23 +277,43 @@ window.PORTFOLIO_CONTENT = {
   "links": [
     { "selector": ".framer-q8xdzt", "href": "projects/" },
     { "selector": ".framer-2b863c", "href": "projects/hostyo-custom-crm-owner-portal/" },
-    { "selector": ".framer-1q4fmzq", "href": "projects/hostyo-custom-crm-owner-portal/" },
+    { "selector": ".framer-1q4fmzq", "href": "projects/hostyo-custom-crm-owner-portal/", "label": "View project: Hostyo – Custom CRM & Owner Portal" },
     { "selector": ".framer-1ursfq3", "href": "projects/brioform-athlete-development-platform/" },
-    { "selector": ".framer-1c90wjp", "href": "projects/brioform-athlete-development-platform/" },
+    { "selector": ".framer-1c90wjp", "href": "projects/brioform-athlete-development-platform/", "label": "View project: BrioForm – The Athlete Standard" },
     { "selector": ".framer-jo359c", "href": "projects/maitr-iso-workforce-management-app/" },
-    { "selector": ".framer-16uzqtl", "href": "projects/maitr-iso-workforce-management-app/" },
-    { "selector": ".framer-1kh2pnn", "href": "projects/maitr-iso-workforce-management-app/" }
+    { "selector": ".framer-16uzqtl", "href": "projects/maitr-iso-workforce-management-app/", "label": "View project: MAÎTR-ISO – Workforce Management Web & Mobile App" },
+    { "selector": ".framer-1kh2pnn", "href": "projects/maitr-iso-workforce-management-app/", "label": "View project: MAÎTR-ISO – Workforce Management Web & Mobile App" },
+
+    { "selector": ".framer-bhx0qq", "href": "contact.html" },
+    { "selector": ".framer-gbudbv", "href": "contact.html" },
+    { "selector": ".framer-19hw81p", "href": "#scroll:[data-framer-name=\"Packages Section\"]" },
+    { "selector": ".framer-amh8ml", "href": "contact.html" },
+    { "selector": ".framer-obj9e", "href": "contact.html" },
+    { "selector": ".framer-1a0f18u", "href": "contact.html" },
+    { "selector": ".framer-om3m7u", "href": "contact.html" },
+    { "selector": ".framer-1j2tlpc", "href": "projects/", "label": "Learn more: Frontend Development projects" },
+    { "selector": ".framer-12sb9r", "href": "projects/", "label": "Learn more: Backend Development projects" },
+    { "selector": ".framer-1v383ye", "href": "projects/", "label": "Learn more: Full-Stack Web App projects" },
+    { "selector": ".framer-lw09bk", "href": "projects/", "label": "Learn more: API Integration projects" },
+    { "selector": ".framer-16jpylm", "href": "projects/", "label": "Learn more: Website Development projects" },
+    { "selector": ".framer-1knuddf", "href": "projects/", "label": "Learn more: Maintenance & Optimization projects" }
   ],
 
   "colors": {
     "f6f0e8": "e6eae7",
-    "f5eee6": "e3e7e4",
+    "f5eee6": "e9ecea",
     "a9271f": "5e6b63",
     "5a1311": "3a423d",
     "3b1513": "262b28",
-    "7a5b57": "6f7a73",
+    "7a5b57": "5a645e",
     "f0948a": "b2beb5",
-    "f7d9b8": "cfd6d1"
+    "f7d9b8": "eef1ef"
+  },
+
+  "colorOverrides": {
+    "rgba(255, 255, 255, 0.7)": "rgba(255, 255, 255, 0.92)",
+    "rgba(246, 240, 232, 0.65)": "rgba(246, 240, 232, 1)",
+    "rgba(246, 240, 232, 0.8)": "rgba(246, 240, 232, 1)"
   },
 
   "pages": {

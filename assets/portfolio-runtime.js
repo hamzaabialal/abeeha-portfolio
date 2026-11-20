@@ -58,8 +58,19 @@
   var imgRe = new RegExp(imgSrc, "g");
   var imgOne = new RegExp(imgSrc);
 
+  // Exact colour strings to replace before recolouring, e.g. a faint
+  // "rgba(255, 255, 255, 0.7)" raised to meet WCAG AA contrast.
+  // Keys/values are written like "rgba(255, 255, 255, 0.7)"; matching ignores
+  // spacing and requires the closing ")" so 0.7 never matches 0.75.
+  var overrides = Object.keys(C.colorOverrides || {}).map(function (k) {
+    var body = k.replace(/\)\s*$/, "");
+    var src = body.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s*,\s*/g, "\\s*,\\s*");
+    return { re: new RegExp(src + "(?=\\s*\\))", "gi"), to: C.colorOverrides[k].replace(/\)\s*$/, "") };
+  });
+
   function fixStyleString(s) {
     if (!s) return s;
+    for (var oi = 0; oi < overrides.length; oi++) s = s.replace(overrides[oi].re, overrides[oi].to);
     return s
       .replace(hexRe, function (m, h) { return "#" + C.colors[h.toLowerCase()]; })
       .replace(rgbRe, function (m, a, r, c1, g, c2, b) {
@@ -131,6 +142,15 @@
         if (src !== local) el.setAttribute("src", local);
         var alt = C.alts && C.alts[m[1]];
         if (alt && el.getAttribute("alt") !== alt) el.setAttribute("alt", alt);
+      } else if (C.alts) {
+        // Images still served from Framer's CDN (not replaced locally) can
+        // also have alt text, matched by their image id.
+        for (var aid in C.alts) {
+          if ((src.indexOf(aid) !== -1 || set.indexOf(aid) !== -1) && el.getAttribute("alt") !== C.alts[aid]) {
+            el.setAttribute("alt", C.alts[aid]);
+            break;
+          }
+        }
       }
     }
     if (links.length && el.matches) {
@@ -138,6 +158,8 @@
         if (el.matches(links[i].selector)) {
           if (el.getAttribute("role") !== "link") el.setAttribute("role", "link");
           if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "0");
+          // Image-only links need an accessible name.
+          if (links[i].label && el.getAttribute("aria-label") !== links[i].label) el.setAttribute("aria-label", links[i].label);
         }
       }
     }
@@ -177,6 +199,12 @@
     if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") return;
     e.preventDefault();
     e.stopPropagation();
+    // "#scroll:<selector>" scrolls to a section on the same page.
+    if (href.indexOf("#scroll:") === 0) {
+      var target = document.querySelector(href.slice(8));
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
     if (e.ctrlKey || e.metaKey) window.open(href, "_blank");
     else location.href = href;
   }
@@ -224,7 +252,9 @@
     for (var i = 0; i < rules.length; i++) {
       var r = rules[i];
       if (r.cssRules && r.cssRules.length) fixRules(r.cssRules);
-      if (!r.style || !oldColour.test(r.cssText)) continue;
+      if (!r.style) continue;
+      var txt = r.cssText;
+      if (!oldColour.test(txt) && !overrides.some(function (o) { o.re.lastIndex = 0; return o.re.test(txt); })) continue;
       for (var j = 0; j < r.style.length; j++) {
         var prop = r.style[j];
         var val = r.style.getPropertyValue(prop);

@@ -4,6 +4,40 @@
  * Framer's hydration, unlike direct DOM edits.
  */
 
+/* ---- Homepage · "Selected Projects" polaroids: landscape, full screenshots ---- */
+/* Template = two portrait polaroids (240×280 photo) overlapping heavily.
+   Use landscape cards whose photo has the screenshots' 1600×726 shape and
+   object-fit: contain, and offset the 2nd card so it only overlaps the 1st
+   card's white caption margin, never the screenshot itself. Sizes are
+   relative so the group scales down on tablet/mobile. */
+.framer-qj069u {                       /* polaroid group */
+  width: min(480px, 86vw) !important;
+  height: auto !important;
+  aspect-ratio: 480 / 380;
+}
+.framer-tnpdkq,
+.framer-4ofm8o {                       /* the two cards */
+  width: 66% !important;
+  padding: 10px 10px 34px !important;
+}
+.framer-tnpdkq { top: 0 !important; left: 0 !important; }
+.framer-4ofm8o { top: 47% !important; left: 34% !important; }
+.framer-ufxujs,
+.framer-yfcuya {                       /* photo area */
+  height: auto !important;
+  aspect-ratio: 1600 / 726;
+  background: #fff;
+}
+.framer-ufxujs img,
+.framer-yfcuya img {
+  object-fit: contain !important;
+  object-position: center !important;
+}
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  /* keep the tilted cards' corners clear of the screen edge on tablets */
+  .framer-qj069u { width: min(440px, 46vw) !important; }
+}
+
 /* ---- Homepage · Project 01 (Hostyo): two landscape dashboard previews ---- */
 /* The template collage is a 2×2 grid of portrait photos. Show one wide
    screenshot per row instead (Owner Portal on top, CRM below). */
@@ -28,8 +62,8 @@
 }
 .framer-efwppw img,
 .framer-r6woxi img {
-  object-fit: cover !important;
-  object-position: left top !important;
+  object-fit: contain !important;   /* show the whole screenshot */
+  object-position: center !important;
 }
 
 /* Project 01 tags: keep only the "View Project →" pill */
@@ -52,8 +86,8 @@
 }
 .framer-nsck25 img,
 .framer-zf1ipm img {
-  object-fit: cover !important;
-  object-position: left top !important;
+  object-fit: contain !important;   /* show the whole screenshot */
+  object-position: center !important;
 }
 .framer-1c90wjp {
   transition: transform 0.35s ease;
@@ -101,13 +135,47 @@
 }
 .framer-1ikcn1s img,
 .framer-1n0t0zo img {
-  object-fit: cover !important;
-  object-position: left top !important;
+  object-fit: contain !important;   /* show the whole screenshot */
+  object-position: center !important;
 }
 /* Project 03 tags: keep only the "View Project →" pill */
 .framer-1gcvgu3,
 .framer-159sgc3 {
   display: none !important;
+}
+
+/* Template buttons that were not linked anywhere, now wired up in
+   portfolio-content.js ("links"): About, Services CTAs and "Learn more". */
+.framer-bhx0qq,
+.framer-gbudbv,
+.framer-19hw81p,
+.framer-amh8ml,
+.framer-obj9e,
+.framer-1a0f18u,
+.framer-om3m7u,
+.framer-1j2tlpc,
+.framer-12sb9r,
+.framer-1v383ye,
+.framer-lw09bk,
+.framer-16jpylm,
+.framer-1knuddf {
+  cursor: pointer;
+}
+.framer-bhx0qq:focus-visible,
+.framer-gbudbv:focus-visible,
+.framer-19hw81p:focus-visible,
+.framer-amh8ml:focus-visible,
+.framer-obj9e:focus-visible,
+.framer-1a0f18u:focus-visible,
+.framer-om3m7u:focus-visible,
+.framer-1j2tlpc:focus-visible,
+.framer-12sb9r:focus-visible,
+.framer-1v383ye:focus-visible,
+.framer-lw09bk:focus-visible,
+.framer-16jpylm:focus-visible,
+.framer-1knuddf:focus-visible {
+  outline: 2px solid #b2beb5;
+  outline-offset: 3px;
 }
 
 /* Elements turned into links by portfolio-runtime.js */

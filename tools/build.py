@@ -39,6 +39,18 @@ def load_content():
     return content
 
 
+def apply_color_overrides(s, overrides):
+    """Replace exact colour strings (spacing-insensitive), e.g. a faint
+    "rgba(255, 255, 255, 0.7)" raised for WCAG AA contrast. Runs before recolor."""
+    for key, value in overrides.items():
+        body = re.sub(r"\)\s*$", "", key)
+        pat = re.escape(body).replace(r"\ ", " ")
+        pat = re.sub(r"\s*,\s*", r"\\s*,\\s*", pat)
+        to = re.sub(r"\)\s*$", "", value)
+        s = re.sub(pat + r"(?=\s*\))", lambda m: to, s, flags=re.I)
+    return s
+
+
 def recolor(s, colors):
     def hx(m):
         h = m.group(1).lower()
@@ -123,6 +135,7 @@ def main():
     content = load_content()
     for name in PAGES:
         s = (SRC / name).read_text(encoding="utf-8")
+        s = apply_color_overrides(s, content.get("colorOverrides", {}))
         s = recolor(s, content["colors"])
         s = set_alts(s, content.get("alts", {}))
         s = replace_images(s, content["images"])
