@@ -1,0 +1,140 @@
+/*
+ * Layout overrides for the Framer pages (index/about/services/contact).
+ * Framer class names below are stable in this export; CSS survives
+ * Framer's hydration, unlike direct DOM edits.
+ */
+
+/* ---- Homepage · Project 01 (Hostyo): two landscape dashboard previews ---- */
+/* The template collage is a 2×2 grid of portrait photos. Show one wide
+   screenshot per row instead (Owner Portal on top, CRM below). */
+.framer-1g2vin6,
+.framer-1yfvw77 {            /* 2nd image in each row */
+  display: none !important;
+}
+.framer-efwppw,
+.framer-r6woxi {             /* 1st image in each row → full width */
+  flex: 1 1 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.framer-1q4fmzq {            /* collage card */
+  height: auto !important;
+}
+.framer-1d3fp1g,
+.framer-1nbpxt8 {            /* rows keep the screenshots' 1600×726 shape */
+  flex: none !important;
+  height: auto !important;
+  aspect-ratio: 1600 / 726;
+}
+.framer-efwppw img,
+.framer-r6woxi img {
+  object-fit: cover !important;
+  object-position: left top !important;
+}
+
+/* Project 01 tags: keep only the "View Project →" pill */
+.framer-fdh8we,
+.framer-1yswz06 {
+  display: none !important;
+}
+
+/* ---- Homepage · Project 02 (BrioForm): two landscape dashboard previews ---- */
+/* Template row = three portrait photos; show two wide screenshots instead. */
+.framer-gqvzw3 {             /* 3rd image */
+  display: none !important;
+}
+.framer-nsck25,
+.framer-zf1ipm {
+  flex: 1 1 0 !important;
+  min-width: 280px !important;
+  height: auto !important;
+  aspect-ratio: 1600 / 726;
+}
+.framer-nsck25 img,
+.framer-zf1ipm img {
+  object-fit: cover !important;
+  object-position: left top !important;
+}
+.framer-1c90wjp {
+  transition: transform 0.35s ease;
+}
+.framer-1c90wjp:hover {
+  transform: translateY(-4px);
+}
+/* Project 02 tags: keep only the "View Project →" pill */
+.framer-1ejll7w,
+.framer-jbo2p0 {
+  display: none !important;
+}
+
+/* ---- Homepage · Project 03 (MAÎTR-ISO): two screenshots on top, text below ---- */
+/* Template = [image column | text | image column]. Put both image columns in
+   one row (one screenshot each) and move the text underneath, like Project 02. */
+.framer-f73094,
+.framer-lhzee {              /* 2nd image in each column */
+  display: none !important;
+}
+.framer-16uzqtl,
+.framer-1kh2pnn {            /* image columns */
+  order: 0;
+  flex: 1 1 calc(50% - 12px) !important;
+  width: auto !important;
+  min-width: 260px !important;
+  height: auto !important;
+  transition: transform 0.35s ease;
+}
+.framer-16uzqtl:hover,
+.framer-1kh2pnn:hover {
+  transform: translateY(-4px);
+}
+.framer-5u8upd {             /* text block */
+  order: 1;
+  flex: 1 1 100% !important;
+  width: 100% !important;
+}
+.framer-1ikcn1s,
+.framer-1n0t0zo {            /* the remaining screenshot in each column */
+  flex: none !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1600 / 1000;
+}
+.framer-1ikcn1s img,
+.framer-1n0t0zo img {
+  object-fit: cover !important;
+  object-position: left top !important;
+}
+/* Project 03 tags: keep only the "View Project →" pill */
+.framer-1gcvgu3,
+.framer-159sgc3 {
+  display: none !important;
+}
+
+/* Elements turned into links by portfolio-runtime.js */
+.framer-q8xdzt,
+.framer-2b863c,
+.framer-1q4fmzq,
+.framer-1ursfq3,
+.framer-1c90wjp,
+.framer-jo359c,
+.framer-16uzqtl,
+.framer-1kh2pnn {
+  cursor: pointer;
+}
+.framer-q8xdzt:focus-visible,
+.framer-2b863c:focus-visible,
+.framer-1q4fmzq:focus-visible,
+.framer-1ursfq3:focus-visible,
+.framer-1c90wjp:focus-visible,
+.framer-jo359c:focus-visible,
+.framer-16uzqtl:focus-visible,
+.framer-1kh2pnn:focus-visible {
+  outline: 2px solid #b2beb5;
+  outline-offset: 3px;
+}
+.framer-1q4fmzq {
+  transition: transform 0.35s ease;
+}
+.framer-1q4fmzq:hover {
+  transform: translateY(-4px);
+}

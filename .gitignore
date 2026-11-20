@@ -1,0 +1,25 @@
+# Dependencies & build output
+node_modules/
+dist/
+build/
+.cache/
+
+# Environment files & secrets
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code local settings
+.claude/settings.local.json
