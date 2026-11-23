@@ -203,11 +203,17 @@
   outline-offset: 3px;
 }
 
+/* Services page: pricing packages removed — hide the Packages section and
+   the hero "See packages" button that scrolled to it. */
+.framer-vnwtwj,              /* Packages Section */
+.framer-19hw81p {            /* "See packages" button */
+  display: none !important;
+}
+
 /* Template buttons that were not linked anywhere, now wired up in
    portfolio-content.js ("links"): About, Services CTAs and "Learn more". */
 .framer-bhx0qq,
 .framer-gbudbv,
-.framer-19hw81p,
 .framer-amh8ml,
 .framer-obj9e,
 .framer-1a0f18u,
@@ -222,7 +228,6 @@
 }
 .framer-bhx0qq:focus-visible,
 .framer-gbudbv:focus-visible,
-.framer-19hw81p:focus-visible,
 .framer-amh8ml:focus-visible,
 .framer-obj9e:focus-visible,
 .framer-1a0f18u:focus-visible,

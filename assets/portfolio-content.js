@@ -296,7 +296,6 @@ window.PORTFOLIO_CONTENT = {
 
     { "selector": ".framer-bhx0qq", "href": "contact.html" },
     { "selector": ".framer-gbudbv", "href": "contact.html" },
-    { "selector": ".framer-19hw81p", "href": "#scroll:[data-framer-name=\"Packages Section\"]" },
     { "selector": ".framer-amh8ml", "href": "contact.html" },
     { "selector": ".framer-obj9e", "href": "contact.html" },
     { "selector": ".framer-1a0f18u", "href": "contact.html" },
