@@ -90,7 +90,10 @@ window.PORTFOLIO_CONTENT = {
     "“A true creative partner. She understands both the business and the people using it.”": "“Placeholder testimonial — replace or remove once you have real feedback.”",
 
     "Let's create something meaningful together.": "Let's build something meaningful together.",
-    "hello@joannealexander.com": "abeeha@example.com",
+    "hello@joannealexander.com": "abeehaaamirr@gmail.com",
+    "+123-456-7890": "+92 329 8891430",
+    "Mon – Fri, 9am – 6pm": "Mon – Sat, 10am – 10pm",
+    "Mon – Fri · 9am – 6pm": "Mon – Sat · 10am – 10pm",
     "Creative strategist & product designer crafting meaningful digital experiences.": "Developer building clean, responsive and meaningful digital experiences.",
     "© 2026 Joanne Alexander. All rights reserved.": "© 2026 Abeeha Aamir. All rights reserved.",
 
@@ -186,14 +189,14 @@ window.PORTFOLIO_CONTENT = {
 
     "Design System": "Full-Stack Web App",
     "STUDIO": "LOCATION",
-    "Rua das Flores 28, Lisbon": "City, Country",
+    "Rua das Flores 28, Lisbon": "Bahawalpur, Pakistan",
     "Instagram": "GitHub",
     "Dribbble": "LeetCode",
     "Behance": "Stack Overflow",
     "A clear proposal with scope and price. Once approved, we start creating.": "A clear proposal with scope and price. Once approved, we start building.",
     "Visit the": "My",
-    "Coffee is always on. Drop by for a chat about your next project — just let me know you’re coming.": "I work remotely with clients and teams anywhere. (Placeholder: add your city or preferred meeting details here.)",
-    "Rua das Flores 28, 1200-195 Lisbon, Portugal": "City, Country"
+    "Coffee is always on. Drop by for a chat about your next project — just let me know you’re coming.": "Based in Bahawalpur, Pakistan — working remotely with clients and teams anywhere.",
+    "Rua das Flores 28, 1200-195 Lisbon, Portugal": "Bahawalpur, Pakistan"
   },
 
   "images": {
@@ -275,6 +278,12 @@ window.PORTFOLIO_CONTENT = {
   ],
 
   "links": [
+    { "selector": ".framer-15xwglg, .framer-1tecrea, .framer-lhpl2v, .framer-a6fu5g, .framer-18ibp5k, .framer-skw540", "href": "mailto:abeehaaamirr@gmail.com", "label": "Email Abeeha: abeehaaamirr@gmail.com" },
+    { "selector": ".framer-12a88nl, .framer-z95ee4, .framer-1y0xpjo, .framer-1btkmgk, .framer-g6m2p6", "href": "tel:+923298891430", "label": "Call Abeeha: +92 329 8891430" },
+    { "selector": ".framer-199atu3", "href": "https://github.com/abeehaaamirr", "label": "GitHub profile (opens in a new tab)" },
+    { "selector": ".framer-n7kpba", "href": "https://www.linkedin.com/in/abeeha-aamir-/", "label": "LinkedIn profile (opens in a new tab)" },
+    { "selector": ".framer-1vallcp", "href": "https://www.google.com/maps/search/?api=1&query=Bahawalpur%2C%20Pakistan", "label": "Open Bahawalpur, Pakistan in Google Maps (opens in a new tab)" },
+
     { "selector": ".framer-q8xdzt", "href": "projects/" },
     { "selector": ".framer-2b863c", "href": "projects/hostyo-custom-crm-owner-portal/" },
     { "selector": ".framer-1q4fmzq", "href": "projects/hostyo-custom-crm-owner-portal/", "label": "View project: Hostyo – Custom CRM & Owner Portal" },

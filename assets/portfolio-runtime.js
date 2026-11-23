@@ -205,6 +205,11 @@
       if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
+    // External profiles/maps open in a new tab; mailto:/tel: and pages load here.
+    if (/^https?:\/\//i.test(href) && href.indexOf(location.origin) !== 0) {
+      window.open(href, "_blank", "noopener");
+      return;
+    }
     if (e.ctrlKey || e.metaKey) window.open(href, "_blank");
     else location.href = href;
   }

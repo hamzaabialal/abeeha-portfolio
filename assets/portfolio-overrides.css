@@ -176,6 +176,26 @@
   display: none !important;
 }
 
+/* Contact page socials: only GitHub and LinkedIn are used */
+.framer-i7e3vl,              /* LeetCode (template "Dribbble") */
+.framer-9v9me8 {             /* Stack Overflow (template "Behance") */
+  display: none !important;
+}
+/* Email / phone / socials / "Open in Maps", linked in portfolio-content.js */
+.framer-15xwglg, .framer-1tecrea, .framer-lhpl2v, .framer-a6fu5g, .framer-18ibp5k, .framer-skw540,
+.framer-12a88nl, .framer-z95ee4, .framer-1y0xpjo, .framer-1btkmgk, .framer-g6m2p6,
+.framer-199atu3, .framer-n7kpba, .framer-1vallcp {
+  cursor: pointer;
+}
+.framer-15xwglg:focus-visible, .framer-1tecrea:focus-visible, .framer-lhpl2v:focus-visible,
+.framer-a6fu5g:focus-visible, .framer-18ibp5k:focus-visible, .framer-skw540:focus-visible,
+.framer-12a88nl:focus-visible, .framer-z95ee4:focus-visible, .framer-1y0xpjo:focus-visible,
+.framer-1btkmgk:focus-visible, .framer-g6m2p6:focus-visible, .framer-199atu3:focus-visible,
+.framer-n7kpba:focus-visible, .framer-1vallcp:focus-visible {
+  outline: 2px solid #b2beb5;
+  outline-offset: 3px;
+}
+
 /* Template buttons that were not linked anywhere, now wired up in
    portfolio-content.js ("links"): About, Services CTAs and "Learn more". */
 .framer-bhx0qq,
