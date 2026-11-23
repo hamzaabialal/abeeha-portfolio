@@ -4,6 +4,22 @@
  * Framer's hydration, unlike direct DOM edits.
  */
 
+/* ---- Homepage · Hero: portrait beside the "Developer" script, not over it ---- */
+/* Template centres the portrait (.framer-183locl) inside .framer-jn3zdn, so
+   on desktop/tablet her head covers the end of "Developer" (.framer-1fmckcx,
+   44% of the title width). Move the portrait right so the head starts just
+   after the script; "PORTFOLIO" stays behind her. Width/aspect-ratio and the
+   appear animation (inline transform) are untouched. Mobile already stacks
+   cleanly and is left as is. */
+@media (min-width: 1200px) {
+  .framer-jn3zdn { align-items: flex-start !important; }
+  .framer-183locl { margin-left: calc(44vw - 80px) !important; }
+}
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .framer-jn3zdn { align-items: flex-end !important; }
+  .framer-183locl { width: min(600px, calc(71vw - 90px)) !important; }
+}
+
 /* ---- Homepage · "Selected Projects" polaroids: landscape, full screenshots ---- */
 /* Template = two portrait polaroids (fixed 360×470 group, cards absolutely
    positioned and rotated −27° / +24° by Framer's appear animation via an
