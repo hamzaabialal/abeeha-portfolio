@@ -13,7 +13,16 @@
    cleanly and is left as is. */
 @media (min-width: 1200px) {
   .framer-jn3zdn { align-items: flex-start !important; }
-  .framer-183locl { margin-left: calc(44vw - 80px) !important; }
+  /* The hero is 100vh tall and the portrait is bottom-anchored. Size it from
+     the viewport height (aspect ratio kept) so the top of her head lines up
+     with the top of "Developer" on every screen height, and place it so her
+     hair starts ~50px after the end of "Developer" (title right edge ≈ 44vw). */
+  .framer-183locl {
+    --pw: clamp(480px, calc(88.4vh - 106px), 860px);
+    width: var(--pw) !important;
+    max-width: none !important;
+    margin-left: calc(44vw - 17px - 0.3 * var(--pw)) !important;
+  }
 }
 @media (min-width: 810px) and (max-width: 1199.98px) {
   .framer-jn3zdn { align-items: flex-end !important; }
