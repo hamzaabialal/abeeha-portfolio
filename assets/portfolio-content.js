@@ -195,11 +195,12 @@ window.PORTFOLIO_CONTENT = {
     "Behance": "Stack Overflow",
     "A clear proposal with scope and price. Once approved, we start creating.": "A clear proposal with scope and price. Once approved, we start building.",
     "Visit the": "My",
-    "Coffee is always on. Drop by for a chat about your next project — just let me know you’re coming.": "Based in Bahawalpur, Pakistan — working remotely with clients and teams anywhere.",
+    "Coffee is always on. Drop by for a chat about your next project — just let me know you’re coming.": "I worked at Techticks in Bahawalpur as a Full Stack & AI Automation Developer — building web apps, custom CRMs and smart automated workflows.",
     "Rua das Flores 28, 1200-195 Lisbon, Portugal": "Bahawalpur, Pakistan"
   },
 
   "images": {
+    "eQUTXQ8rByuwp6lukPpwibpYYg0": "assets/images/techticks-office.webp",
     "qwDvSo0wyH4CBjsPBRbzgFhz9fw": "assets/images/abeeha-portrait.webp",
     "VdvtmjCwdrHBZJznP2uG4jNrQY": "assets/images/abeeha-portrait.webp",
     "PlSkVTwt0uDXQstLN3IOgouTnLc": "assets/images/abeeha-portrait-medium-mirror.webp",
@@ -270,7 +271,7 @@ window.PORTFOLIO_CONTENT = {
     "tnkQKs6bGodGofwfeF2QYS5g": "Placeholder client photo",
     "c7Ufc5JgRXBihlEgDntv5sWL7s": "Placeholder client photo",
     "1LpIZ0HXEmk9oVakTx3w7f1JB4": "Hands arranging printed layouts on a table during a planning session",
-    "eQUTXQ8rByuwp6lukPpwibpYYg0": "Bright workspace with a long table, chairs and plants"
+    "eQUTXQ8rByuwp6lukPpwibpYYg0": "Techticks office at Chughtai Complex, Bahawalpur"
   },
 
   "scopedText": [

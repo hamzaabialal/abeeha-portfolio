@@ -176,6 +176,13 @@
   display: none !important;
 }
 
+/* Contact page "My Location": the Techticks photo is portrait inside a
+   landscape frame (object-fit: cover), so keep the lit TECHTICKS sign and
+   the building front in view instead of the plain night sky above it. */
+[data-framer-name="Studio Image"] img {
+  object-position: 50% 44% !important;
+}
+
 /* Contact page socials: only GitHub and LinkedIn are used */
 .framer-i7e3vl,              /* LeetCode (template "Dribbble") */
 .framer-9v9me8 {             /* Stack Overflow (template "Behance") */
