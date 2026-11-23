@@ -94,7 +94,7 @@ window.PORTFOLIO_CONTENT = {
     "+123-456-7890": "+92 329 8891430",
     "Mon – Fri, 9am – 6pm": "Mon – Sat, 10am – 10pm",
     "Mon – Fri · 9am – 6pm": "Mon – Sat · 10am – 10pm",
-    "Creative strategist & product designer crafting meaningful digital experiences.": "Developer building clean, responsive and meaningful digital experiences.",
+    "Creative strategist & product designer crafting meaningful digital experiences.": "Building powerful web experiences and intelligent AI-driven solutions.",
     "© 2026 Joanne Alexander. All rights reserved.": "© 2026 Abeeha Aamir. All rights reserved.",
 
     "A creative strategist and product designer who believes good design is equal parts empathy, clarity and a little bit of magic.": "A developer who believes great software is equal parts clean code, clear thinking and a little bit of curiosity.",
